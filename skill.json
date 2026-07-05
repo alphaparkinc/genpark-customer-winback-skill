@@ -1,0 +1,41 @@
+{
+  "name": "customer-winback-skill",
+  "version": "1.0.0",
+  "description": "Identify lapsed customers, score their win-back potential, generate personalized re-engagement offers, and build win-back email sequences.",
+  "author": "alphaparkinc",
+  "category": "retention",
+  "tags": [
+    "winback",
+    "retention",
+    "lapsed",
+    "re-engagement",
+    "email"
+  ],
+  "inputs": {
+    "customers": {
+      "type": "array",
+      "description": "Lapsed customer records: [{id, days_since_purchase, total_orders, total_spend, avg_order_value, preferred_category}]."
+    },
+    "brand_name": {
+      "type": "string",
+      "description": "Brand name for personalization."
+    },
+    "max_discount_pct": {
+      "type": "number",
+      "description": "Maximum discount to offer high-value customers.",
+      "default": 25
+    }
+  },
+  "outputs": {
+    "prioritized_customers": {
+      "type": "array",
+      "description": "Customers ranked by win-back potential with offers and email sequence."
+    },
+    "summary": {
+      "type": "object",
+      "description": "Win-back campaign summary stats."
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
